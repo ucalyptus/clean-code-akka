@@ -2,6 +2,8 @@
 
 Clean Code principles adapted for Akka SDK services.
 
+Documentation site: [ucalyptus.github.io/clean-code-akka](https://ucalyptus.github.io/clean-code-akka/)
+
 This repository mirrors the structure and intent of
 [leonardolemie/clean-code-java](https://github.com/leonardolemie/clean-code-java),
 but the examples and guidance are written for Akka SDK projects: HTTP endpoints,

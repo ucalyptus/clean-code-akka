@@ -36,7 +36,8 @@ Run:
 
 ```bash
 node scripts/check-markdown.mjs
+node scripts/build-site.mjs
 ```
 
-The script checks local README/doc anchor links and verifies required files are
-present.
+The checks validate local README/doc anchor links, verify required files are
+present, and build the GitHub Pages documentation site into `dist/`.

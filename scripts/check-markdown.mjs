@@ -16,6 +16,10 @@ const requiredFiles = [
   "docs/source-notes.md",
   "examples/shopping-cart-clean-boundaries.md",
   ".github/pull_request_template.md",
+  ".github/workflows/pages.yml",
+  "site/assets/docs.css",
+  "site/assets/docs.js",
+  "scripts/build-site.mjs",
 ];
 
 const markdownFiles = [
