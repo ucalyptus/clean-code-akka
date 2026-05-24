@@ -19,6 +19,7 @@ const requiredFiles = [
   ".github/workflows/pages.yml",
   "site/assets/docs.css",
   "site/assets/docs.js",
+  "site/assets/favicon.svg",
   "scripts/build-site.mjs",
 ];
 

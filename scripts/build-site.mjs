@@ -339,6 +339,7 @@ function layout(page, content) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${escapeHtml(page.summary)}">
   <title>${escapeHtml(page.title)} | clean-code-akka</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/docs.css">
 </head>
 <body>
@@ -379,6 +380,7 @@ fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(path.join(dist, "assets"), { recursive: true });
 fs.copyFileSync("site/assets/docs.css", path.join(dist, "assets/docs.css"));
 fs.copyFileSync("site/assets/docs.js", path.join(dist, "assets/docs.js"));
+fs.copyFileSync("site/assets/favicon.svg", path.join(dist, "assets/favicon.svg"));
 fs.writeFileSync(path.join(dist, ".nojekyll"), "");
 
 for (const page of pages) {
