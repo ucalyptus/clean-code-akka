@@ -13,6 +13,8 @@ Use this checklist when reviewing an Akka SDK pull request.
 ## Naming
 
 - [ ] Are component ids stable, unique, and business-named?
+- [ ] Do new component examples use current `@Component(id = "...")`
+      vocabulary rather than stale `@ComponentId` examples?
 - [ ] Are event type names stable and business-specific?
 - [ ] Do command methods use verbs that say what they do?
 - [ ] Are public routes named after resources or business actions?
@@ -49,6 +51,8 @@ Use this checklist when reviewing an Akka SDK pull request.
 - [ ] Are timeouts, retries, and waiting states explicit?
 - [ ] Is compensation modeled where needed?
 - [ ] Can operators inspect progress from state or notifications?
+- [ ] Does new workflow code use the current typesafe/fluent API instead of the
+      deprecated Step API?
 
 ## Views
 
@@ -57,6 +61,7 @@ Use this checklist when reviewing an Akka SDK pull request.
 - [ ] Is the row model a deliberate projection?
 - [ ] Are table/query changes compatible or documented as migrations?
 - [ ] Are deletes handled intentionally?
+- [ ] Is snapshot, timestamp, or history start behavior explicit when used?
 
 ## Consumers
 
@@ -69,6 +74,10 @@ Use this checklist when reviewing an Akka SDK pull request.
 
 - [ ] Is the agent solving a genuinely non-deterministic problem?
 - [ ] Are prompts, tools, and session memory boundaries explicit?
+- [ ] Are guardrails, evaluators, memory filters/interceptors, and model-provider
+      settings reviewed where they affect behavior?
+- [ ] Do new agent examples use `@AgentRole` rather than stale
+      `@AgentDescriptor` patterns?
 - [ ] Is model output validated before affecting durable state?
 - [ ] Are evaluation cases or deterministic boundary tests included?
 
@@ -86,3 +95,5 @@ Use this checklist when reviewing an Akka SDK pull request.
 - [ ] Are correlation ids preserved where useful?
 - [ ] Are component ids, routes, events, views, and topics treated as contracts?
 - [ ] Is local run/test documentation still accurate?
+- [ ] Is the guidance still aligned with the latest Akka release notes for SDK,
+      CLI, Runtime, and libraries?

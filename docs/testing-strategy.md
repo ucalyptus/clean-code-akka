@@ -46,6 +46,8 @@ Component tests prove Akka behavior:
 - View projection logic
 - Consumer idempotency
 - Agent boundary logic
+- Runtime-supported lifecycle behavior such as entity expiry, notifications,
+  snapshot starts, and workflow suspend/resume when used
 
 Keep these focused. If a component test is hard to write, the component may be
 doing too much.
@@ -76,6 +78,7 @@ For each workflow, cover:
 - Timeout or waiting state
 - Duplicate command
 - Resume after partial progress
+- Suspend, resume, or termination behavior when the workflow exposes it
 
 ## 5. View Tests
 
@@ -85,6 +88,8 @@ Views should be tested around access patterns:
 - Ignored events are actually ignored.
 - Query shape returns the intended projection.
 - Delete behavior is intentional.
+- Snapshot or timestamp start behavior is covered when used for high-volume
+  sources or migrations.
 
 Remember that views are eventually consistent in real operation. Tests should
 not teach callers to assume immediate read-after-write unless the system
@@ -105,9 +110,10 @@ Minimum cases:
 
 Agents need two complementary checks:
 
-- Deterministic tests around prompt construction, tool boundaries, DTO mapping,
-  and fallback behavior.
-- Evaluation cases for model quality, safety, and expected response shape.
+- Deterministic tests around prompt construction, tool boundaries, memory
+  configuration, guardrails, DTO mapping, and fallback behavior.
+- Evaluation cases for model quality, safety, expected response shape, and
+  tool-use boundaries.
 
 Do not hide critical business invariants inside a model response. Validate model
 output before it affects durable state.
@@ -118,6 +124,8 @@ A change is done when:
 
 - Domain rules changed by the PR have fast unit tests.
 - Akka component behavior changed by the PR has component tests.
+- HTTP/gRPC dependencies are mocked in component or workflow tests when the
+  project TestKit supports that boundary.
 - Public routes changed by the PR have endpoint tests or explicit manual curl
   evidence.
 - Workflow changes include at least one failure-path test.

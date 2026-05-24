@@ -11,6 +11,7 @@ reproduce book text.
 ## Official Akka Sources
 
 - [Akka SDK documentation](https://doc.akka.io/sdk/index.html)
+- [Akka release notes](https://doc.akka.io/reference/release-notes.html)
 - [Akka architecture and project structure](https://doc.akka.io/concepts/architecture-model.html)
 - [Running an Akka service locally](https://doc.akka.io/sdk/running-locally.html)
 - [Designing HTTP endpoints](https://doc.akka.io/sdk/http-endpoints.html)
@@ -42,6 +43,8 @@ The adaptation emphasizes:
 - Prefer Akka SDK terminology over generic Java terminology.
 - Prefer business examples over framework-only examples.
 - Prefer current official Akka docs for API-specific claims.
+- Re-check release notes before adding API examples, especially for annotations,
+  workflow APIs, agent features, CLI commands, and runtime operations.
 - Avoid copying book prose.
 - Treat component ids, event names, routes, topics, and persisted state as
   contracts.

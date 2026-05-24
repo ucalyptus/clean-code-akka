@@ -31,6 +31,13 @@ const pages = [
     summary: "How to choose and shape endpoints, entities, workflows, views, consumers, timers, and agents.",
   },
   {
+    source: "docs/release-notes-guidance.md",
+    output: "release-notes-guidance.html",
+    title: "Akka Release Notes Guidance",
+    section: "Core",
+    summary: "Release-aware design and review guidance for current Akka SDK, CLI, and Runtime changes.",
+  },
+  {
     source: "docs/testing-strategy.md",
     output: "testing-strategy.html",
     title: "Testing Strategy",

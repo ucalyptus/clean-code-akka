@@ -8,10 +8,11 @@ engineering guidance.
 1. [Clean Akka Principles](clean-akka-principles.md)
 2. [Architecture Boundaries](architecture-boundaries.md)
 3. [Component Playbook](component-playbook.md)
-4. [Testing Strategy](testing-strategy.md)
-5. [Akka Clean Code Anti-Patterns](anti-patterns.md)
-6. [Review Checklist](review-checklist.md)
-7. [Source Notes](source-notes.md)
+4. [Akka Release Notes Guidance](release-notes-guidance.md)
+5. [Testing Strategy](testing-strategy.md)
+6. [Akka Clean Code Anti-Patterns](anti-patterns.md)
+7. [Review Checklist](review-checklist.md)
+8. [Source Notes](source-notes.md)
 
 ## What This Repo Optimizes For
 
@@ -19,6 +20,8 @@ engineering guidance.
 - Domain logic that can be tested without a runtime.
 - Durable state and event models that are stable enough to operate.
 - Review checklists that catch Akka-specific design problems early.
+- Release-aware guidance that keeps examples aligned with current Akka SDK,
+  CLI, and Runtime capabilities.
 - Examples that show where code belongs, not just what syntax compiles.
 
 ## Non-Goals

@@ -91,6 +91,9 @@ record OrderPaid(PaymentReference paymentReference) implements OrderEvent {}
 
 ## Workflows
 
+Use the current typesafe/fluent Workflow API for new code. The older Step API is
+deprecated; only reference it when documenting an explicit migration.
+
 Clean workflow checklist:
 
 - Workflow id maps to one business process instance.
@@ -100,6 +103,8 @@ Clean workflow checklist:
 - Timeouts and retries are part of the design.
 - Compensation is modeled, not hidden in catch blocks.
 - Human intervention paths are command handlers with clear guards.
+- Notifications, suspend/resume, termination, and timeout behavior are modeled
+  where operators or clients need them.
 
 Workflow smell:
 
@@ -123,6 +128,8 @@ Clean view checklist:
 - Row model is a projection, not a leaked aggregate unless deliberate.
 - The endpoint using the view documents eventual consistency when relevant.
 - Incompatible query or table changes are treated as migrations.
+- Snapshot or timestamp starts are documented when they are used to avoid full
+  event-history replay.
 
 ## Consumers
 
@@ -133,8 +140,14 @@ Clean consumer checklist:
 - Poison-message behavior is explicit.
 - External side effects can survive retries.
 - Business correlation ids are logged.
+- Snapshot, timestamp, or history start behavior is explicit for high-volume
+  sources.
 
 ## Agents
+
+Use current agent vocabulary in new code: `@AgentRole` for the agent role, and
+`@Component(id = "...")` for component identity where a component annotation is
+needed.
 
 Clean agent checklist:
 
@@ -142,6 +155,8 @@ Clean agent checklist:
 - Prompt construction is named and tested where possible.
 - Tool calls are explicit and bounded.
 - Session memory semantics are documented.
+- Guardrails, memory filters/interceptors, and model-provider settings are
+  explicit where they affect behavior.
 - Deterministic business rules stay outside the agent.
 - Evaluation cases cover expected model behavior.
 
