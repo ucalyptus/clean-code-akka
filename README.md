@@ -7,6 +7,39 @@ This repository mirrors the structure and intent of
 but the examples and guidance are written for Akka SDK projects: HTTP endpoints,
 agents, workflows, entities, views, consumers, timers, and domain models.
 
+## Start Here
+
+This repo has two layers:
+
+- `README.md` is the mirrored Clean Code guide adapted section-by-section for
+  Akka SDK.
+- `docs/` turns those principles into Akka-specific architecture, testing,
+  review, and refactoring guidance.
+
+If you are building or reviewing an Akka SDK service, read these first:
+
+1. [Clean Akka Principles](docs/clean-akka-principles.md)
+2. [Architecture Boundaries](docs/architecture-boundaries.md)
+3. [Component Playbook](docs/component-playbook.md)
+4. [Testing Strategy](docs/testing-strategy.md)
+5. [Review Checklist](docs/review-checklist.md)
+6. [Akka Clean Code Anti-Patterns](docs/anti-patterns.md)
+
+## Clean Akka Code Constitution
+
+1. Domain rules are plain Java and are testable without Akka.
+2. Endpoints translate transport; they do not own business decisions.
+3. Entities own durable facts; workflows own durable processes.
+4. Views serve query access patterns and tolerate eventual consistency.
+5. Consumers are idempotent and explicit about delivery assumptions.
+6. Agents are used for non-deterministic reasoning, not deterministic state.
+7. Runtime details stay at the edge; business language stays in the center.
+8. Every public route, command, event, and view query has a reason to exist.
+9. Component ids, event type names, and persisted state shapes are treated as
+   long-lived contracts.
+10. Tests prove domain rules first, component behavior second, and end-to-end
+    wiring only where it buys confidence.
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -61,6 +94,21 @@ Akka SDK references used while adapting this guide:
 - [Running an Akka service locally](https://doc.akka.io/sdk/running-locally.html)
 - [Designing HTTP endpoints](https://doc.akka.io/sdk/http-endpoints.html)
 - [Implementing key value entities](https://doc.akka.io/sdk/key-value-entities.html)
+- [Implementing workflows](https://doc.akka.io/sdk/workflows.html)
+- [Implementing views](https://doc.akka.io/sdk/views.html)
+- [Agents](https://doc.akka.io/sdk/agents.html)
+
+Book-shaped principles used to deepen the adaptation:
+
+- Clean Code: meaningful names, small functions, clean tests, boundaries,
+  error handling, and concurrency discipline.
+- Clean Architecture: dependency direction, use-case boundaries, testable
+  architecture, components, and stable contracts.
+- Clean Agile: small releases, acceptance tests, refactoring, simple design,
+  collective ownership, and continuous integration.
+- A Philosophy of Software Design: complexity reduction, deep modules,
+  information hiding, different layers with different abstractions, and error
+  cases designed out where practical.
 
 **[back to top](#table-of-contents)**
 
