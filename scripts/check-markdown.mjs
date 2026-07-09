@@ -10,6 +10,7 @@ const requiredFiles = [
   "docs/clean-akka-principles.md",
   "docs/architecture-boundaries.md",
   "docs/component-playbook.md",
+  "docs/release-notes-guidance.md",
   "docs/testing-strategy.md",
   "docs/anti-patterns.md",
   "docs/review-checklist.md",

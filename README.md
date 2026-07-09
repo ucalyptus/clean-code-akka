@@ -23,9 +23,10 @@ If you are building or reviewing an Akka SDK service, read these first:
 1. [Clean Akka Principles](docs/clean-akka-principles.md)
 2. [Architecture Boundaries](docs/architecture-boundaries.md)
 3. [Component Playbook](docs/component-playbook.md)
-4. [Testing Strategy](docs/testing-strategy.md)
-5. [Review Checklist](docs/review-checklist.md)
-6. [Akka Clean Code Anti-Patterns](docs/anti-patterns.md)
+4. [Akka Release Notes Guidance](docs/release-notes-guidance.md)
+5. [Testing Strategy](docs/testing-strategy.md)
+6. [Review Checklist](docs/review-checklist.md)
+7. [Akka Clean Code Anti-Patterns](docs/anti-patterns.md)
 
 ## Clean Akka Code Constitution
 
@@ -92,6 +93,7 @@ and keeps business decisions out of infrastructure glue.
 Akka SDK references used while adapting this guide:
 
 - [Akka SDK documentation](https://doc.akka.io/sdk/index.html)
+- [Akka release notes](https://doc.akka.io/reference/release-notes.html)
 - [Akka architecture and project structure](https://doc.akka.io/concepts/architecture-model.html)
 - [Running an Akka service locally](https://doc.akka.io/sdk/running-locally.html)
 - [Designing HTTP endpoints](https://doc.akka.io/sdk/http-endpoints.html)
